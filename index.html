@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skill Map Visualization</title>
+    <style>
+        #container {
+            position: absolute;
+            top: 10px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script src="./lib/d3.v3.min.js"></script>
+    <script src="./lib/d3plus.min.js"></script>
+    <script src="./map.js"></script>
+    <script src="./testData.js"></script>
+    <script>
+        var container = document.getElementById("container");
+        var width = container.offsetWidth;
+        new SkillMapGenerator(container, MapJson, {}, function (current) {
+            console.log(current);
+        })
+    </script>
+</body>
+
+</html>
